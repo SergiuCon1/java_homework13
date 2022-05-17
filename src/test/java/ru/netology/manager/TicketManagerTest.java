@@ -57,10 +57,8 @@ class TicketManagerTest {
         manager.addProduct(ticketThree);
         manager.addProduct(ticketFour);
 
-        manager.searchBy("CHI", "MOW");
-
         Ticket[] expected = {ticketThree};
-        Ticket[] actual = manager.findAllBySearch();
+        Ticket[] actual = manager.searchBy("CHI", "MOW");
 
         assertArrayEquals(expected, actual);
     }
@@ -74,10 +72,8 @@ class TicketManagerTest {
         manager.addProduct(ticketThree);
         manager.addProduct(ticketFour);
 
-        manager.searchBy("CHI", "PFP");
-
         Ticket[] expected = {};
-        Ticket[] actual = manager.findAllBySearch();
+        Ticket[] actual = manager.searchBy("CHI", "PFP");
 
         assertArrayEquals(expected, actual);
     }
@@ -91,10 +87,8 @@ class TicketManagerTest {
         manager.addProduct(ticketThree);
         manager.addProduct(ticketFour);
 
-        manager.searchBy("PFP", "MOW");
-
         Ticket[] expected = {};
-        Ticket[] actual = manager.findAllBySearch();
+        Ticket[] actual = manager.searchBy("PFP", "MOW");
 
         assertArrayEquals(expected, actual);
     }
@@ -108,10 +102,8 @@ class TicketManagerTest {
         manager.addProduct(ticketThree);
         manager.addProduct(ticketFour);
 
-        manager.searchBy("KJA", "MOW");
-
         Ticket[] expected = {};
-        Ticket[] actual = manager.findAllBySearch();
+        Ticket[] actual = manager.searchBy("KJA", "MOW");
 
         assertArrayEquals(expected, actual);
     }
@@ -126,10 +118,8 @@ class TicketManagerTest {
         manager.addProduct(ticketFour);
         manager.addProduct(ticketFive);
 
-        manager.searchBy("CHI", "MOW");
-
         Ticket[] expected = {ticketThree, ticketFive};
-        Ticket[] actual = manager.findAllBySearch();
+        Ticket[] actual = manager.searchBy("CHI", "MOW");
 
         assertArrayEquals(expected, actual);
     }

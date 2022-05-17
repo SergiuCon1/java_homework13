@@ -16,7 +16,7 @@ public class TicketManager {
         repository.saveTicket(ticket);
     }
 
-    public void searchBy(String from, String to) {
+    public Ticket[] searchBy(String from, String to) {
         int length = tickets.length + 1;
         Ticket[] result = new Ticket[length];// тут будем хранить подошедшие запросу продукты
         for (Ticket ticket : repository.findAll()) {
@@ -41,6 +41,7 @@ public class TicketManager {
                 }
             }
         }
+        return tickets;
     }
 
     // метод определения соответствия билета запросу airportFrom
@@ -59,9 +60,5 @@ public class TicketManager {
         } else {
             return false;
         }
-    }
-
-    public Ticket[] findAllBySearch() {
-        return tickets;
     }
 }
